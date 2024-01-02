@@ -2,7 +2,7 @@
     <section class="container mx-auto px-6 py-12 h-full flex flex-col items-center">
         <header class="flex justify-center">
             <h1>
-                <img src="/logo.svg" alt="Clue Connect" class="w-96">
+                <img src="/logo.svg" alt="Clue Connect" style="width: 30rem;">
             </h1>
         </header>
 

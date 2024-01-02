@@ -23,12 +23,14 @@
             @endif
         @endif
 
-        @if($this->showAnswer)
-            <p class="text-4xl">{{ $card->connection }}</p>
-        @else
-            <button class="rounded px-2 py-2 text-background bg-secondary" wire:click="revealAnswer">
-                Reveal the answer!
-            </button>
-        @endif
+        <div class="mt-4">
+            @if($this->showAnswer)
+                <p class="text-5xl text-secondary">{{ $card->connection }}</p>
+            @else
+                <button class="text-xl rounded px-2 py-2 text-background bg-secondary" wire:click="revealAnswer">
+                    Reveal the answer!
+                </button>
+            @endif
+        </div>
     </div>
 </div>
