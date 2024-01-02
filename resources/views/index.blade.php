@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="container mx-auto px-6 py-12 h-full flex flex-col items-center" style="max-width: 1000px">
+    <section class="container mx-auto px-6 py-12 h-full flex flex-col items-center">
         <header class="flex justify-center">
             <h1>
                 <img src="/logo.svg" alt="Clue Connect" class="w-96">
