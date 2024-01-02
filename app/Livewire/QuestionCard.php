@@ -41,6 +41,6 @@ class QuestionCard extends Component
     {
         $this->showAnswer = true;
         $this->showClue = true;
-        $this->visibleQuestions = 4;
+        $this->visibleQuestions = count($this->card->questions);
     }
 }

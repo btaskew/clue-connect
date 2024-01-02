@@ -10,16 +10,9 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->string('question_1');
-            $table->string('answer_1');
-            $table->string('question_2');
-            $table->string('answer_2');
-            $table->string('question_3');
-            $table->string('answer_3');
-            $table->string('question_4');
-            $table->string('answer_4');
+            $table->json('questions');
             $table->string('clue');
-            $table->string('connection');
+            $table->string('answer');
             $table->timestamps();
         });
     }

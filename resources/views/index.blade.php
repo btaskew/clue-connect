@@ -6,7 +6,7 @@
             </h1>
         </header>
 
-        <h2 class="mt-10 font-semibold text-2xl text-tertiary">Can you find the link between these four questions?</h2>
+        <h2 class="mt-10 font-semibold text-2xl text-tertiary">Can you find the link between these questions?</h2>
 
         <livewire:question-card  />
     </section>

@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Card;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Carbon;
 
 class CardFactory extends Factory
 {
@@ -13,16 +12,30 @@ class CardFactory extends Factory
     public function definition(): array
     {
         return [
-            'question_1' => $this->faker->sentence(),
-            'answer_1' => $this->faker->sentence(),
-            'question_2' => $this->faker->sentence(),
-            'answer_2' => $this->faker->sentence(),
-            'question_3' => $this->faker->sentence(),
-            'answer_3' => $this->faker->sentence(),
-            'question_4' => $this->faker->sentence(),
-            'answer_4' => $this->faker->sentence(),
+            'questions' => [
+                [
+                    'question' => $this->faker->sentence(),
+                    'answer' => $this->faker->sentence(),
+                ],
+            ],
             'clue' => $this->faker->sentence(),
-            'connection' => $this->faker->word(),
+            'answer' => $this->faker->sentence(),
         ];
+    }
+
+    public function questionCount(int $count): Factory
+    {
+        $questions = [];
+
+        for ($i = 1; $i <= $count; $i++) {
+            $questions[] = [
+                'question' => $this->faker->sentence(),
+                'answer' => $this->faker->sentence(),
+            ];
+        }
+
+        return $this->state(fn () => [
+            'questions' => $questions,
+        ]);
     }
 }

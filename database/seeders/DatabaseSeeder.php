@@ -10,16 +10,26 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Card::create([
-            'question_1' => 'Which flower is the symbol of Marie Curie Cancer Care?',
-            'answer_1' => 'Daffodil',
-            'question_2' => 'Name the doomed attack by the British cavalry during the Crimean war',
-            'answer_2' => 'Charge of the Light Brigade',
-            'question_3' => 'In Judith Kerr\'s famous kid\'s book, who came to tea?',
-            'answer_3' => 'The Tiger',
-            'question_4' => 'We can\'t think of a clever question for this clue, so what are the 9th and 6th letters of the alphabet?',
-            'answer_4' => 'If',
+            'questions' => [
+                [
+                    'question' => 'Which flower is the symbol of Marie Curie Cancer Care?',
+                    'answer' => 'Daffodil',
+                ],
+                [
+                    'question' => 'Name the doomed attack by the British cavalry during the Crimean war',
+                    'answer' => 'Charge of the Light Brigade',
+                ],
+                [
+                    'question' => 'In Judith Kerr\'s famous kid\'s book, who came to tea?',
+                    'answer' => 'The Tiger',
+                ],
+                [
+                    'question' => 'We can\'t think of a clever question for this clue, so what are the 9th and 6th letters of the alphabet?',
+                    'answer' => 'If',
+                ],
+            ],
             'clue' => 'They don\'t have to rhyme',
-            'connection' => 'Poems',
+            'answer' => 'Poems',
         ]);
     }
 }
