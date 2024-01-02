@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Card;
+use Livewire\Attributes\Computed;
 use Livewire\Component;
 
 class QuestionCard extends Component
@@ -11,11 +12,16 @@ class QuestionCard extends Component
 
     public int $visibleQuestions = 1;
 
+    public bool $showClue = false;
+
+    public bool $showAnswer = false;
+
     public function mount()
     {
         $this->card = Card::first();
     }
 
+    #[Computed]
     public function displayQuestions(): array
     {
         return array_slice($this->card->questions, 0, $this->visibleQuestions);
@@ -26,8 +32,15 @@ class QuestionCard extends Component
         $this->visibleQuestions++;
     }
 
-    public function render()
+    public function revealClue(): void
     {
-        return view('livewire.question-card');
+        $this->showClue = true;
+    }
+
+    public function revealAnswer(): void
+    {
+        $this->showAnswer = true;
+        $this->showClue = true;
+        $this->visibleQuestions = 4;
     }
 }
